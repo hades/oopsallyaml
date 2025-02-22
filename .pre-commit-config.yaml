@@ -1,0 +1,27 @@
+# schema: pre-commit-config
+
+repos:
+- repo: https://github.com/hades/pre-commit-hooks
+  rev: 42bc79146f8b566f640ff773057d48a9416763a7
+  hooks:
+    - id: check-added-large-files
+    - id: check-merge-conflict
+    - id: check-toml
+    - id: check-yaml
+      exclude: .*[.]schema[.]yaml$
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: a6ff26895e5ae243a36999ba87eb6b4af3c202b3
+  hooks:
+    - id: ruff
+      args: [ --fix ]
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.2.4
+  hooks:
+    - id: codespell
+- repo: https://github.com/hades/oopsallyaml
+  rev: bf2aa5f882e8de7f19a2cf74ea2d4140524cb7a4
+  hooks:
+    - id: oopsallyaml
+      exclude: .*[.]schema[.]yaml$

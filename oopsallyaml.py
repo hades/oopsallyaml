@@ -5,6 +5,7 @@ from typing import Optional
 
 import yamale
 
+
 class ValidationError(Exception):
   messages: list[str]
 

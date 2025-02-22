@@ -28,8 +28,8 @@ def load_schema(schema_name: str) -> yamale.schema.Schema:
   try:
     schema_path = f".yamlschemas/{schema_name}.schema.yaml"
     return yamale.make_schema(schema_path)
-  except FileNotFoundError:
-    raise ValidationError([f"schema '{schema_name}' not found"])
+  except FileNotFoundError as e:
+    raise ValidationError([f"schema '{schema_name}' not found"]) from e
 
 def main() -> int:
   had_errors = False
@@ -51,7 +51,7 @@ def main() -> int:
             error_strings.append(f"in {result.data}:")
           for error in result.errors:
             error_strings.append(f"  {error}")
-        raise ValidationError(error_strings)
+        raise ValidationError(error_strings) from e
     except ValidationError as e:
       for message in e.messages:
         print(f"{filename}: {message}")

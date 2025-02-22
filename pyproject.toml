@@ -19,3 +19,11 @@ build-backend = "poetry.core.masonry.api"
 
 [project.scripts]
 oopsallyaml = "oopsallyaml:main"
+
+[tool.ruff]
+line-length = 120
+indent-width = 2
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["B", "C4", "DTZ", "E", "F", "G", "I", "N", "UP", "W"]

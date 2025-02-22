@@ -1,0 +1,21 @@
+[project]
+name = "oopsallyaml"
+
+[tool.poetry]
+name = "oopsallyaml"
+version = "0.1.0"
+description = "A pre-commit hook that validates all YAML files against their schemas using Yamale."
+authors = ["Edward Toroshchyn <dev@hades.name>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+yamale = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+oopsallyaml = "oopsallyaml:main"

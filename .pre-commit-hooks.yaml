@@ -1,0 +1,8 @@
+-   id: oopsallyaml
+    name: check yaml schema with Yamale
+    description: checks that all YAML files validate against their schemas
+    entry: oopsallyaml
+    language: python
+    types: [yaml]
+    pass_filenames: true
+    stages: [pre-commit, pre-push, manual]

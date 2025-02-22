@@ -1,0 +1,5 @@
+{
+	"name": "Python",
+	"image": "python:3.9",
+	"onCreateCommand": "pip install poetry"
+}

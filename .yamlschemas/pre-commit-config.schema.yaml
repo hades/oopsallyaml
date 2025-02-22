@@ -1,0 +1,14 @@
+repos: list(include('repo'))
+---
+repo:
+  repo: str()
+  hooks: list(include('hook'))
+  rev: str(required=False)
+hook:
+  id: str()
+  args: list(str(), required=False)
+  entry: str(required=False)
+  language: str(required=False)
+  name: str(required=False)
+  pass_filenames: bool(required=False)
+  types: list(str(), required=False)

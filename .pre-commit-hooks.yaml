@@ -1,3 +1,5 @@
+# schema: pre-commit-hooks
+
 -   id: oopsallyaml
     name: check yaml schema with Yamale
     description: checks that all YAML files validate against their schemas
@@ -6,3 +8,4 @@
     types: [yaml]
     pass_filenames: true
     stages: [pre-commit, pre-push, manual]
+    exclude: ^.yamlschemas/

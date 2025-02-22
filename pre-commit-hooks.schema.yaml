@@ -1,0 +1,12 @@
+list(include('hook'))
+---
+hook:
+  id: str()
+  name: str()
+  description: str()
+  entry: str()
+  language: str()
+  types: list(str())
+  stages: list(str())
+  pass_filenames: bool(required=False)
+  exclude: str(required=False)

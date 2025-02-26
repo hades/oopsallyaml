@@ -1,0 +1,7 @@
+{
+  "errors": [
+     [ "no-schema-header.yaml", "no schema name found" ],
+     [ "no-schema-header.yaml", "add a '# schema: <name>' declaration in the first line" ]
+  ],
+  "files": ["no-schema-header.yaml"]
+}

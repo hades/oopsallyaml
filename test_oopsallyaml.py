@@ -9,6 +9,10 @@ from oopsallyaml import scan_files
 @pytest.mark.parametrize("test_directory", [
   "file-not-found",
   "invalid-yaml",
+  "no-schema",
+  "no-schema-header",
+  "schema-opt-out",
+  "schema-valid",
   "yaml-from-hell",
   ])
 def test_with_subdirectory(test_directory: str):

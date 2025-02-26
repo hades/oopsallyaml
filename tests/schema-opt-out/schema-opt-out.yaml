@@ -1,0 +1,5 @@
+# no schema: we are too lazy to write a schema for this file
+
+a:
+  b:
+    - 17

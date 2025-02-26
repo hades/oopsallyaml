@@ -1,0 +1,5 @@
+# schema: simple-but-missing
+
+a:
+  b:
+    - 17

@@ -1,0 +1,6 @@
+{
+  "errors": [
+     [ "no-schema.yaml", "schema 'simple-but-missing' not found" ]
+  ],
+  "files": ["no-schema.yaml"]
+}

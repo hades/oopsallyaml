@@ -32,9 +32,9 @@ def load_schema(schema_name: str) -> yamale.schema.Schema:
   except FileNotFoundError as e:
     raise ValidationError([f"schema '{schema_name}' not found"]) from e
 
-def main() -> int:
-  had_errors = False
-  for filename in sys.argv[1:]:
+def scan_files(files: list[str]) -> list[tuple[str, str]]:
+  errors: list[tuple[str, str]] = []
+  for filename in files:
     try:
       schema_name = extract_schema_name(filename)
       if not schema_name:
@@ -55,9 +55,14 @@ def main() -> int:
         raise ValidationError(error_strings) from e
     except ValidationError as e:
       for message in e.messages:
-        print(f"{filename}: {message}")
-      had_errors = True
-  return 1 if had_errors else 0
+        errors.append((filename, message))
+  return errors
+
+def main() -> int:
+  errors = scan_files(sys.argv[1:])
+  for filename, message in errors:
+    print(f"{filename}: {message}")
+  return 1 if errors else 0
 
 if __name__ == "__main__":
   main()

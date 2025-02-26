@@ -1,0 +1,8 @@
+server_config:
+  port_mapping: list(str())
+  serve: list(str())
+  geoblock_regions: list(str())
+  flush_cache:
+    'on': list(str())
+    'priority': str()
+  allow_postgres_versions: list(str())

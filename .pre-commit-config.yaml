@@ -24,4 +24,8 @@ repos:
   rev: bf2aa5f882e8de7f19a2cf74ea2d4140524cb7a4
   hooks:
     - id: oopsallyaml
-      exclude: .*[.]schema[.]yaml$
+      exclude: |
+        (?x)^(
+          /tests/.*|
+          .*[.]schema[.]yaml
+          )$

@@ -1,0 +1,12 @@
+{
+  "errors": [
+     [ "from-hell.yaml", "in from-hell.yaml:" ],
+     [ "from-hell.yaml", "  server_config.port_mapping.0: '1342' is not a str." ],
+     [ "from-hell.yaml", "  server_config.geoblock_regions.3: 'False' is not a str." ],
+     [ "from-hell.yaml", "  server_config.flush_cache.True: Unexpected element" ],
+     [ "from-hell.yaml", "  server_config.flush_cache.on: Required field missing" ],
+     [ "from-hell.yaml", "  server_config.allow_postgres_versions.2: '10.23' is not a str." ],
+     [ "from-hell.yaml", "  server_config.allow_postgres_versions.3: '12.13' is not a str." ]
+  ],
+  "files": ["from-hell.yaml"]
+}

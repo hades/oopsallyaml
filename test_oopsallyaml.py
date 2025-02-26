@@ -6,7 +6,10 @@ import pytest
 from oopsallyaml import scan_files
 
 
-@pytest.mark.parametrize("test_directory", ["yaml-from-hell"])
+@pytest.mark.parametrize("test_directory", [
+  "file-not-found",
+  "yaml-from-hell",
+  ])
 def test_with_subdirectory(test_directory: str):
   current_directory = os.getcwd()
   try:

@@ -1,0 +1,6 @@
+{
+  "errors": [
+     [ "missing-file.yaml", "file not found: missing-file.yaml" ]
+  ],
+  "files": ["missing-file.yaml"]
+}

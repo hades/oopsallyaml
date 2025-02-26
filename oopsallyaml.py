@@ -56,6 +56,8 @@ def scan_files(files: list[str]) -> list[tuple[str, str]]:
     except ValidationError as e:
       for message in e.messages:
         errors.append((filename, message))
+    except FileNotFoundError as e:
+      errors.append((filename, f"file not found: {e.filename}"))
   return errors
 
 def main() -> int:

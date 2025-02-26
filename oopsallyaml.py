@@ -13,17 +13,17 @@ class ValidationError(Exception):
   def __init__(self, messages: list[str]):
     self.messages = messages
 
+
 def extract_schema_name(filename) -> Optional[str]:
   with open(filename) as f:
     first_line = f.readline()
-    match = re.match('# (no )?schema: (.+)', first_line)
+    match = re.match("# (no )?schema: (.+)", first_line)
     if not match:
-      raise ValidationError([
-          "no schema name found",
-          "add a '# schema: <name>' declaration in the first line"])
+      raise ValidationError(["no schema name found", "add a '# schema: <name>' declaration in the first line"])
     if match.group(1):
       return None
     return match.group(2)
+
 
 @functools.cache
 def load_schema(schema_name: str) -> yamale.schema.Schema:
@@ -32,6 +32,7 @@ def load_schema(schema_name: str) -> yamale.schema.Schema:
     return yamale.make_schema(schema_path)
   except FileNotFoundError as e:
     raise ValidationError([f"schema '{schema_name}' not found"]) from e
+
 
 def scan_files(files: list[str]) -> list[tuple[str, str]]:
   errors: list[tuple[str, str]] = []
@@ -64,11 +65,13 @@ def scan_files(files: list[str]) -> list[tuple[str, str]]:
       errors.append((filename, f"file not found: {e.filename}"))
   return errors
 
+
 def main() -> int:
   errors = scan_files(sys.argv[1:])
   for filename, message in errors:
     print(f"{filename}: {message}")
   return 1 if errors else 0
+
 
 if __name__ == "__main__":
   main()

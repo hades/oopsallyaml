@@ -4,6 +4,7 @@ import sys
 from typing import Optional
 
 import yamale
+import yaml
 
 
 class ValidationError(Exception):
@@ -56,6 +57,9 @@ def scan_files(files: list[str]) -> list[tuple[str, str]]:
     except ValidationError as e:
       for message in e.messages:
         errors.append((filename, message))
+    except yaml.YAMLError as e:
+      for error_line in str(e).splitlines():
+        errors.append((filename, error_line))
     except FileNotFoundError as e:
       errors.append((filename, f"file not found: {e.filename}"))
   return errors

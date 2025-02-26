@@ -1,0 +1,7 @@
+{
+  "errors": [
+     [ "invalid.yaml", "mapping values are not allowed in this context" ],
+     [ "invalid.yaml", "  in \"invalid.yaml\", line 3, column 9" ]
+  ],
+  "files": ["invalid.yaml"]
+}

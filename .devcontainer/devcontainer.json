@@ -1,5 +1,15 @@
 {
-	"name": "Python",
-	"image": "python:3.9",
-	"onCreateCommand": "pip install poetry"
+  "name": "Python",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "develop",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "zeshuaro.vscode-python-poetry"
+      ]
+    }
+  }
 }

@@ -1,0 +1,15 @@
+name: str()
+run-name: str()
+on: list(str())
+jobs:
+  check-pre-commit: include('job')
+---
+job:
+  runs-on: str()
+  steps: list(include('step'))
+step:
+  uses: str(required=False)
+  name: str(required=False)
+  with: any(required=False)
+  run: str(required=False)
+  if: str(required=False)

@@ -8,7 +8,11 @@ repos:
     - id: check-merge-conflict
     - id: check-toml
     - id: check-yaml
-      exclude: .*[.]schema[.]yaml$
+      exclude: |
+        (?x)^(
+          tests/.*|
+          .*[.]schema[.]yaml
+          )$
     - id: end-of-file-fixer
     - id: trailing-whitespace
 - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -26,6 +30,6 @@ repos:
     - id: oopsallyaml
       exclude: |
         (?x)^(
-          /tests/.*|
+          tests/.*|
           .*[.]schema[.]yaml
           )$

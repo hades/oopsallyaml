@@ -33,3 +33,17 @@ repos:
           tests/.*|
           .*[.]schema[.]yaml
           )$
+- repo: local
+  hooks:
+    - id: mypy
+      name: check Python typings with mypy
+      entry: 'poetry run mypy --follow-untyped-imports oopsallyaml.py test_oopsallyaml.py'
+      language: system
+      pass_filenames: false
+      types: [python]
+    - id: pytest
+      name: run unit tests with pytest
+      entry: poetry run pytest -q
+      language: system
+      pass_filenames: false
+      types: [python]

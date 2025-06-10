@@ -16,7 +16,7 @@ yamale = "^6.0.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.0"
 mypy = "^1.15.0"
-types-pyyaml = "^6.0.12.20250402"
+types-pyyaml = "^6.0.12.20250516"
 ruff = "^0.11.5"
 
 [build-system]

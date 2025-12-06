@@ -15,3 +15,4 @@ hook:
   pass_filenames: bool(required=False)
   stages: list(str(), required=False)
   types: list(str(), required=False)
+  files: str(required=False)

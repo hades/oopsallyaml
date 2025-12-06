@@ -7,8 +7,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
-        "zeshuaro.vscode-python-poetry"
+        "ms-python.python"
       ]
     }
   }

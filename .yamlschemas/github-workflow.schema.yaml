@@ -1,8 +1,7 @@
 name: str()
 run-name: str()
 on: list(str())
-jobs:
-  check-pre-commit: include('job')
+jobs: map(include('job'), key=str())
 ---
 job:
   runs-on: str()
